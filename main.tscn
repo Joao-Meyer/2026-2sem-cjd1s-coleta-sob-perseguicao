@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://tuqg84sv11rf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dghuhlqg5biw4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://vro71tyh1oba" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vad88"]
 size = Vector3(1.6073208, 0.011627197, 6.457016)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1ui4"]
 size = Vector3(0.48205566, 0.27954102, 0.08520508)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cd16"]
+size = Vector3(1.293335, 0.84887695, 1.0332031)
 
 [node name="Principal" type="Node3D" unique_id=1911359914]
 
@@ -29,3 +33,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0
 shape = SubResource("BoxShape3D_y1ui4")
 
 [node name="fence2" parent="Cenario/Cerca" unique_id=576654874 instance=ExtResource("2_0xm2m")]
+
+[node name="Cerca2" type="StaticBody3D" parent="Cenario" unique_id=127575993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54173565, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca2" unique_id=530116211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.0030517578)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca2" unique_id=242582462 instance=ExtResource("2_0xm2m")]
+
+[node name="Casa" type="StaticBody3D" parent="Cenario" unique_id=1882091413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.93493867)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Casa" unique_id=263051585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022583008, 0.41296387, 0.016601563)
+shape = SubResource("BoxShape3D_7cd16")
+
+[node name="building-type-a2" parent="Cenario/Casa" unique_id=490445516 instance=ExtResource("3_h2yge")]
