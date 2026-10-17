@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://18gbswteactu"]
 
 [ext_resource type="PackedScene" uid="uid://tuqg84sv11rf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dghuhlqg5biw4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vad88"]
-size = Vector3(0.2034607, 0.0134887695, 0.40716553)
+size = Vector3(1.6073208, 0.011627197, 6.457016)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1ui4"]
+size = Vector3(0.48205566, 0.27954102, 0.08520508)
 
 [node name="Principal" type="Node3D" unique_id=1911359914]
 
@@ -12,7 +16,16 @@ size = Vector3(0.2034607, 0.0134887695, 0.40716553)
 [node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=490910410]
 
 [node name="path-long2" parent="Cenario/Chao" unique_id=2039355107 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=562413534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017547607, 0.004119873, -0.000579834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010232925, 0.005050659, 0.009666443)
 shape = SubResource("BoxShape3D_vad88")
+
+[node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=414182410]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca" unique_id=2138868916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.0030517578)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca" unique_id=576654874 instance=ExtResource("2_0xm2m")]
