@@ -90,10 +90,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17868805, 0)
 shape = SubResource("CapsuleShape3D_vad88")
 
 [node name="character-male-a2" parent="Jogador" unique_id=1873063376 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=710435048]
-transform = Transform3D(-1, 4.5518956e-08, -1.4397138e-07, 0, 0.95347935, 0.30145842, 1.509958e-07, 0.30145842, -0.95347935, -4.619971e-08, 0.42010096, -0.45863694)
+transform = Transform3D(1, 0, 0, 0, 0.95371693, 0.3007058, 0, -0.3007058, 0.95371693, 0, 0.42, 0.459)
 
 [node name="Inimigo" type="CharacterBody3D" parent="." unique_id=1487408860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5507577, 0, 0.22429812)
