@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ik7vyyf0tuc3" path="res://scripts/inimigo.gd" id="6_kek77"]
 [ext_resource type="Script" uid="uid://bd6scctrear0o" path="res://scripts/item.gd" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://v04pj3xrxa8r" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/planter.glb" id="7_272bh"]
+[ext_resource type="Script" uid="uid://bura1l76t2vcq" path="res://scripts/hud.gd" id="10_4c57u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -191,6 +192,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056380928, 0.046044707, 0.
 
 [node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=2012943923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68518007, 0.046044707, 0.23192942)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=174309921]
+script = ExtResource("10_4c57u")
+
+[node name="RotuloPontuacao" type="Label" parent="HUD" unique_id=894867222]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 92.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 32
+text = "Pontos: 0"
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item2" to="Itens/Item2" method="_on_body_entered"]
