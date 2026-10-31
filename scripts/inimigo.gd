@@ -13,8 +13,11 @@ const VELOCIDADE := 1.5
 
 const DISTANCIA_CHEGADA := 0.2
 
-func _physics_process(delta: float) -> void:	
-	_patrulhar()
+func _physics_process(delta: float) -> void:
+	if estado == Estado.PATRULHA:
+		_patrulhar()
+	else:
+		_perseguir()
 	
 	look_at(global_position + velocity)	
 	
@@ -22,6 +25,17 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
+	$AreaDeteccao.body_exited.connect(_ao_detectar_corpo_sair)
+	$AreaCaptura.body_entered.connect(_ao_capturar_corpo_entrar)
+	
+func _ao_capturar_corpo_entrar(corpo: Node3D) -> void:
+	if corpo.is_in_group("player"):
+		print("peguei você!")
+	
+func _ao_detectar_corpo_sair(corpo: Node3D) -> void:
+	if corpo.is_in_group("player"):
+		referencia_jogador = null
+		estado = Estado.PATRULHA
 	
 func _ao_detectar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
@@ -41,3 +55,9 @@ func _patrulhar() -> void:
 		
 	velocity = direcao.normalized() * VELOCIDADE
 	
+func _perseguir() -> void:
+	var direcao := referencia_jogador.global_position - global_position
+	
+	direcao.y = 0
+	
+	velocity = direcao.normalized() * VELOCIDADE
