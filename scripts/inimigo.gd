@@ -9,7 +9,9 @@ var referencia_jogador: Node3D = null
 
 var indice_patrulha := 0
 
-const VELOCIDADE := 1.5
+const VELOCIDADE_BASE := 1.5
+
+var velocidade_atual := VELOCIDADE_BASE
 
 const DISTANCIA_CHEGADA := 0.2
 
@@ -53,11 +55,11 @@ func _patrulhar() -> void:
 		if indice_patrulha == pontos_patrulha.size():
 			indice_patrulha = 0
 		
-	velocity = direcao.normalized() * VELOCIDADE
+	velocity = direcao.normalized() * velocidade_atual
 	
 func _perseguir() -> void:
 	var direcao := referencia_jogador.global_position - global_position
 	
 	direcao.y = 0
 	
-	velocity = direcao.normalized() * VELOCIDADE
+	velocity = direcao.normalized() * velocidade_atual
