@@ -62,6 +62,7 @@ shadow_enabled = true
 [node name="Cenario" type="Node3D" parent="." unique_id=607957723]
 
 [node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=490910410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6902461)
 
 [node name="path-long2" parent="Cenario/Chao" unique_id=2039355107 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
@@ -97,7 +98,7 @@ shape = SubResource("BoxShape3D_7cd16")
 [node name="building-type-a2" parent="Cenario/Casa" unique_id=490445516 instance=ExtResource("3_h2yge")]
 
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=111629710 groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2628243, 2.8100748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76545453, 4.2991357)
 script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=572097502]

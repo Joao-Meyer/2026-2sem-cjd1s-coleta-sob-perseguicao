@@ -16,6 +16,9 @@ var velocidade_atual := VELOCIDADE_BASE
 const DISTANCIA_CHEGADA := 0.2
 
 func _physics_process(delta: float) -> void:
+	if GameManager.jogo_encerrado:
+		return
+	
 	velocidade_atual = VELOCIDADE_BASE * GameManager.dificuldade
 	
 	if estado == Estado.PATRULHA:
@@ -34,6 +37,8 @@ func _ready() -> void:
 	
 func _ao_capturar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
+		$Modelo/AnimationPlayer.play("attack-melee-left")
+		
 		GameManager.perder()
 	
 func _ao_detectar_corpo_sair(corpo: Node3D) -> void:
