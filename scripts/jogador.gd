@@ -14,6 +14,11 @@ func _physics_process(delta: float) -> void:
 	
 	direcao = direcao.normalized()
 	
+	if direcao != Vector3.ZERO:
+		$Modelo/AnimationPlayer.play("walk")
+	else:
+		$Modelo/AnimationPlayer.play("idle")
+	
 	velocity.x = direcao.x * VELOCIDADE
 	velocity.z = direcao.z * VELOCIDADE
 
